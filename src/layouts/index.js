@@ -3,6 +3,7 @@
 import React, { Node, Component } from 'react';
 import Helmet from 'react-helmet';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 import helmet from '../helmet.json';
 import './index.scss';
@@ -31,7 +32,8 @@ class Layout extends Component<Props, State> {
       <div className={styles.wrapper}>
         <Helmet {...helmet} />
         <Nav pathname={location.pathname} />
-        <div>{children()}</div>
+        <div className={styles.children}>{children()}</div>
+        <Footer />
       </div>
     );
   }

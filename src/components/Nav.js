@@ -20,6 +20,9 @@ const Nav = ({ pathname }: Props) => {
       }, {
         show: 'Project',
         to: '/projects',
+      }, {
+        show: 'Acativity',
+        to: '/acativitys',
       },
     ],
   };
