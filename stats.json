@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-9511aab4e918235f4d6a.js",
-      "component---src-pages-index-js-9511aab4e918235f4d6a.js.map"
+      "component---src-pages-index-js-d206b0fe0d837c7d3d4b.js",
+      "component---src-pages-index-js-d206b0fe0d837c7d3d4b.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -13,27 +13,35 @@
       "path---projects-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-a516535b3e7d56a259dd.js",
-      "component---src-layouts-index-js-a516535b3e7d56a259dd.js.map"
+      "component---src-layouts-index-js-d32de32f5cc5c259a188.js",
+      "component---src-layouts-index-js-d32de32f5cc5c259a188.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---acativitys": [
+      "path---acativitys-a0e39f21c11f6a62c5ab.js",
+      "path---acativitys-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "commons": [
-      "commons-034ce7f0dc02c08df7e7.js",
+      "commons-ba7c232b1ee72b9bf7e9.js",
       "build-js-styles.css",
-      "commons-034ce7f0dc02c08df7e7.js.map",
+      "commons-ba7c232b1ee72b9bf7e9.js.map",
       "build-js-styles.css.map"
     ],
+    "component---src-pages-acativitys-js": [
+      "component---src-pages-acativitys-js-860ae309eaa88814da71.js",
+      "component---src-pages-acativitys-js-860ae309eaa88814da71.js.map"
+    ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js-de47e84fa940b83aa100.js",
-      "component---src-pages-projects-js-de47e84fa940b83aa100.js.map"
+      "component---src-pages-projects-js-75ca4c4a1bcb790cb2c6.js",
+      "component---src-pages-projects-js-75ca4c4a1bcb790cb2c6.js.map"
     ],
     "app": [
-      "app-712922f5d2462192592c.js",
+      "app-3bb6958df077670ae645.js",
       "build-js-styles.css",
-      "app-712922f5d2462192592c.js.map",
+      "app-3bb6958df077670ae645.js.map",
       "build-js-styles.css.map"
     ]
   }

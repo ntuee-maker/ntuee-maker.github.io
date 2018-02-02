@@ -1,0 +1,2 @@
+webpackJsonp([0xb8f18b7c283d],{184:function(e,t,a){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var u=a(4),n=r(u),s=a(270),c=r(s),p=function(){return n.default.createElement("div",{className:c.default.wrapper})};t.default=p,e.exports=t.default},270:function(e,t){e.exports={wrapper:"src-pages----acativitys-module---wrapper---2-uCe"}}});
+//# sourceMappingURL=component---src-pages-acativitys-js-860ae309eaa88814da71.js.map
