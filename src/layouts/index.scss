@@ -45,6 +45,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: inherit;
 }
 a:active,
 a:hover {
@@ -622,6 +624,7 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
 // @media only screen and (max-width: 480px) {
 //   html {
 //     font-size: 100%;

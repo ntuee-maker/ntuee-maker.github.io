@@ -1,12 +1,19 @@
 .wrapper {
   width: 100vw;
   min-height: 100vh;
-  display: grid;
-  grid-template: 1fr 160px / auto;
   font-family: 'Quicksand-Regular';
   background-color: #f0f0f0;
+  display: grid;
+  grid-template-rows: 80px 1fr fit-content(200px);
+  grid-template-areas:
+    "navbar"
+    "children"
+    "footer"
 }
 
 .children {
+  grid-area: children;
   width: 100vw;
+  padding: 60px 0;
+  box-sizing: border-box;
 }

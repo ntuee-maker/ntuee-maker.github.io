@@ -1,49 +1,59 @@
 // @flow
 
-import React from 'react';
+import React, { Node } from 'react';
 import Link, { withPrefix } from 'gatsby-link';
-import Icon from './Icon';
-import ghIcon from '../../asset/img/ghIcon.svg';
 
 import styles from './Nav.module.scss';
+
+const Hamburger = ({ children }: Node) => (
+  <div className={styles['hamburger-wrapper']}>
+    <input type="checkbox" id="hamburger-form" />
+    <label htmlFor="hamburger-form" className={styles.hamburger}>
+      <div className={styles.dummy} />
+      {children}
+      <div className={`${styles.spinner} ${styles.diagonal} ${styles.part1}`} />
+      <div className={`${styles.spinner} ${styles.horizontal}`} />
+      <div className={`${styles.spinner} ${styles.diagonal} ${styles.part2}`} />
+    </label>
+  </div>
+);
+
+type LinkProps = {
+  links: Array<{ show: string, to: string }>,
+  pathname: string,
+}
+
+const Links = ({ links, pathname }: LinkProps) => (
+  <div className={styles.links} onClick={e => e.preventDefault()} onKeyDown={() => {}} role="button" tabIndex="0">
+    {
+      links.map(link => (
+        <Link
+          className={`${styles.link} ${withPrefix(link.to) === pathname ? styles.active : ''}`}
+          to={link.to}
+          id={link.show}
+          key={link.show}
+        />
+      ))
+    }
+  </div>
+);
 
 type Props = {
   pathname: string,
 };
 
 const Nav = ({ pathname }: Props) => {
-  const links = {
-    right: [
-      {
-        show: 'About',
-        to: '/',
-      }, {
-        show: 'Project',
-        to: '/projects',
-      }, {
-        show: 'Acativity',
-        to: '/acativitys',
-      },
-    ],
-  };
+  const links = [
+    { show: '', to: '/' },
+    { show: 'About', to: '/' },
+    { show: 'Project', to: '/projects' },
+    { show: 'Acativity', to: '/acativitys' },
+  ];
 
   return (
-    <div className={styles.wrapper}>
-      <Link className={styles.link} to="/" />
-      <div className={styles.link}>
-        <Icon href="https://github.com/ntuee-maker" src={ghIcon} alt="githun" />
-      </div>
-      {
-        links.right.map(link => (
-          <Link
-            className={`${styles.link} ${withPrefix(link.to) === pathname ? styles.active : ''}`}
-            to={link.to}
-            id={link.show}
-            key={link.show}
-          />
-        ))
-      }
-    </div>
+    <Hamburger>
+      <Links links={links} pathname={pathname} />
+    </Hamburger>
   );
 };
 
