@@ -62,13 +62,15 @@
     height: 100%;
     width: 100%;
     left: 0;
+    z-index: 99;
   }
 
   .spinner {
+    position: relative;
+    float: left;
     height: 3px;
     width: 100%;
     background-color: #606060;
-    cursor: pointer;
 
     @media (min-width: 1px) and (max-width: 767px) {
       display: auto;
@@ -78,27 +80,11 @@
     }
   }
 
-  .diagonal.part1 {
-    position: relative;
-    float: left;
-
-    &::before {
-      content: " ";
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-    }
-  }
-
   .horizontal {
-    position: relative;
-    float: left;
     margin-top: 7px;
   }
 
   .diagonal.part2 {
-    position: relative;
-    float: left;
     margin-top: 6px;
   }
 

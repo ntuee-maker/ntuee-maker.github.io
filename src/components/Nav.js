@@ -24,7 +24,7 @@ type LinkProps = {
 }
 
 const Links = ({ links, pathname }: LinkProps) => (
-  <div className={styles.links} onClick={e => e.preventDefault()} onKeyDown={() => {}} role="button" tabIndex="0">
+  <div className={styles.links}>
     {
       links.map(link => (
         <Link
