@@ -25,10 +25,11 @@
 .link {
   flex: 0 0 auto;
   margin: 20px 15px;
+  color: rgba($color: #000000, $alpha: 0.4);
   font-size: 1.3rem;
 
-  &.active {
-    border-bottom: 1px solid;
+  &.active, &:hover {
+    color: rgba($color: #000000, $alpha: 1);
   }
 
   &::before {
@@ -116,6 +117,8 @@
   }
 
   input[type=checkbox]:checked ~ .hamburger > .links {
-    max-height: 100vh;
+    @media (min-width: 1px) and (max-width: 767px) {
+      max-height: 100vh;
+    }
   }
 }

@@ -1,37 +1,31 @@
 .wrapper {
   grid-area: footer;
   width: 100vw;
-  padding: 30px;
+  padding: 15px;
   border-top: solid 1px #d8d8d8;
-  display: grid;
-  grid-gap: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
   @media (min-width: 1px) and (max-width: 767px) {
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-area:
-      "title"
-      "link"
-      "contact";
-  }
-  @media (min-width: 768px) and (max-width: 999999px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-area:
-      "title link contact";
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
 
 .title, .link, .contact {
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .title, .contact {
   font-size: 1.2rem;
+  flex-direction: column;
 }
 
 .link {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 50px)
+  flex-direction: row;
 }

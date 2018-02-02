@@ -12,15 +12,13 @@ const data = [
 
 const Projects = () => (
   <div className={styles.wrapper}>
-    <div className={styles.content}>
-      {
-        data.map(d => (
-          <div className={styles.project}>
-            {d.title}
-          </div>
-        ))
-      }
-    </div>
+    {
+      data.map(d => (
+        <div className={styles.project}>
+          {d.title}
+        </div>
+      ))
+    }
   </div>
 );
 

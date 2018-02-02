@@ -1,28 +1,11 @@
 .wrapper {
   width: 100%;
   min-height: 100%;
+  padding: 30px 19px 60px 19px;
   font-size: 1.5rem;
   display: grid;
-
-  @media (min-width: 1px) and (max-width: 767px) {
-    grid-template: auto / minmax(20px, 1fr) minmax(240px, 20fr) minmax(20px, 1fr);
-    grid-template-areas: "lsidebar content rsidebar";
-  }
-  @media (min-width: 768px) and (max-width: 1120px) {
-    grid-template: auto / 1fr 720px 1fr;
-    grid-template-areas: "lsidebar content rsidebar";
-  }
-  @media (min-width: 1121px) and (max-width: 999999px) {
-    grid-template: auto / 1fr 1080px 1fr;
-    grid-template-areas: "lsidebar content rsidebar";
-  }
-}
-
-.content {
-  grid-area: content;
-  display: grid;
   grid-gap: 30px;
-  grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+  grid-template: auto / repeat(auto-fit, minmax(350px, 1fr));
 
   @media (min-width: 1px) and (max-width: 767px) {
     grid-template: auto / 1fr;

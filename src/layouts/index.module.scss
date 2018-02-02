@@ -8,12 +8,12 @@
   grid-template-areas:
     "navbar"
     "children"
-    "footer"
+    "footer";
 }
 
 .children {
   grid-area: children;
   width: 100vw;
-  padding: 60px 0;
-  box-sizing: border-box;
+  max-width: 1170px;
+  margin: 0 auto;
 }
