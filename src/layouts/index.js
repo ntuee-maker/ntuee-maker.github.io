@@ -2,7 +2,7 @@
 
 import React, { Node, Component } from 'react';
 import Helmet from 'react-helmet';
-import Nav from '../components/Nav';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 import helmet from '../helmet.json';
@@ -21,7 +21,6 @@ class Layout extends Component<Props, State> {
   constructor() {
     super();
     this.state = {
-
     };
   }
 
@@ -31,7 +30,7 @@ class Layout extends Component<Props, State> {
     return (
       <div className={styles.wrapper}>
         <Helmet {...helmet} />
-        <Nav pathname={location.pathname} />
+        <Navbar pathname={location.pathname} />
         <div className={styles.children}>{children()}</div>
         <Footer />
       </div>

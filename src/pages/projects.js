@@ -1,21 +1,34 @@
+// @flow
+
 import React from 'react';
+import Link from 'gatsby-link';
 
 import styles from './projects.module.scss';
 
-const data = [
-  { title: 'P1' },
-  { title: 'P2' },
-  { title: 'P3' },
-  { title: 'P4' },
-  { title: 'P5' },
-];
+type Props = {
+  data: {
+    allMarkdownRemark: {
+      totalCount: number,
+      edges: Array<{
+        node: {
+          id: string,
+          frontmatter: {
+            path: string,
+            title: string,
+            date: string,
+          }
+        }
+      }>
+    }
+  }
+};
 
-const Projects = () => (
+const Projects = ({ data }: Props) => (
   <div className={styles.wrapper}>
     {
-      data.map(d => (
-        <div className={styles.project}>
-          {d.title}
+      data.allMarkdownRemark.edges.map(({ node }) => (
+        <div className={styles.project} key={node.id}>
+          <Link to={node.frontmatter.path}>{ node.frontmatter.title }</Link>
         </div>
       ))
     }
@@ -23,3 +36,22 @@ const Projects = () => (
 );
 
 export default Projects;
+
+// $FlowIgnore
+export const query = graphql`
+  query ProjectQuery {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MM, YYYY")
+            path
+          }
+        }
+      }
+    }
+  }
+`;

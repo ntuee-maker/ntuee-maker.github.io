@@ -1,13 +1,15 @@
 .wrapper {
   width: 100%;
   min-height: 100%;
-  padding: 30px 19px 60px 19px;
+  padding: 60px 19px;
+  box-sizing: border-box;
   font-size: 1.5rem;
   display: grid;
   grid-gap: 30px;
   grid-template: auto / repeat(auto-fit, minmax(350px, 1fr));
 
   @media (min-width: 1px) and (max-width: 767px) {
+    padding: 30px 19px;
     grid-template: auto / 1fr;
   }
 }

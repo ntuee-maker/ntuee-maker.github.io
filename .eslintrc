@@ -27,5 +27,8 @@
       "components": ["Link"],
       "specialLink": ["to"]
     }]
+  },
+  "globals": {
+    "graphql": true
   }
 }

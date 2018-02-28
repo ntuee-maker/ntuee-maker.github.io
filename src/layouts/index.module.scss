@@ -4,7 +4,7 @@
   font-family: 'Quicksand-Regular';
   background-color: #f0f0f0;
   display: grid;
-  grid-template-rows: 80px 1fr fit-content(200px);
+  grid-template-rows: 60px 1fr fit-content(200px);
   grid-template-areas:
     "navbar"
     "children"
