@@ -13,10 +13,12 @@ type Props = {
         node: {
           id: string,
           frontmatter: {
-            path: string,
             title: string,
             date: string,
-          }
+          },
+          fields: {
+            slug: string,
+          },
         }
       }>
     }
@@ -28,7 +30,7 @@ const Projects = ({ data }: Props) => (
     {
       data.allMarkdownRemark.edges.map(({ node }) => (
         <div className={styles.project} key={node.id}>
-          <Link to={node.frontmatter.path}>{ node.frontmatter.title }</Link>
+          <Link to={node.fields.slug}>{ node.frontmatter.title }</Link>
         </div>
       ))
     }
@@ -48,7 +50,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MM, YYYY")
-            path
+          }
+          fields {
+            slug
           }
         }
       }

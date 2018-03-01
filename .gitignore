@@ -1,12 +1,6 @@
-# Project dependencies
-node_modules/
-
-# Build directory
-public/
-.cache/
+.cache
 .DS_Store
+node_modules
+public
+flow-typed
 yarn-error.log
-
-# flow-typed
-flow-typed/npm/*
-!flow-typed/npm/module_vx.x.x.js

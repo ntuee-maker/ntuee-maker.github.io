@@ -2,6 +2,7 @@
 <PROJECT_ROOT>/node_modules/*
 <PROJECT_ROOT>/.cache/*
 <PROJECT_ROOT>/public/*
+<PROJECT_ROOT>/content/*
 
 [include]
 

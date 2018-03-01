@@ -18,14 +18,13 @@ const Template = ({ data }: { data: Object }) => {
 export default Template;
 
 // $FlowIgnore
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+export const query = graphql`
+  query ProjectDetailQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "MM DD, YYYY")
-        path
         title
+        date(formatString: "MM DD, YYYY")
       }
     }
   }

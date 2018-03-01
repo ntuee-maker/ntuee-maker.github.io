@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jason Jian",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "bash ./clean.sh && gatsby develop",
     "build": "gatsby build",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
     "lint:js": "eslint . && flow check .",
