@@ -5,7 +5,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   const projectTemplate = path.resolve('src/templates/project-detail.js');
 
-  return graphql(`{
+  const query = `{
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 1000
@@ -23,19 +23,23 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     }
-  }`) // eslint-disable-next-line consistent-return
-    .then((result) => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
+  }`;
 
-      result.data.allMarkdownRemark.edges
-        .forEach(({ node }) => {
-          createPage({
-            path: node.frontmatter.path,
-            component: projectTemplate,
-            context: {},
+  return new Promise((resolve, reject) => {
+    graphql(query)
+      .then((result) => {
+        if (result.errors) { return reject(result.errors); }
+
+        result.data.allMarkdownRemark.edges
+          .forEach(({ node }) => {
+            createPage({
+              path: node.frontmatter.path,
+              component: projectTemplate,
+              context: {},
+            });
           });
-        });
-    });
+
+        return resolve();
+      });
+  });
 };
