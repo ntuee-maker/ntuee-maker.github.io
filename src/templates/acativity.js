@@ -6,7 +6,7 @@ const Template = ({ data }: { data: Object }) => {
   const { markdownRemark: post } = data;
   return (
     <div>
-      <div>{ post.frontmatter.title }</div>
+      <div>{post.frontmatter.title}</div>
       <div
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -19,7 +19,7 @@ export default Template;
 
 // $FlowIgnore
 export const query = graphql`
-  query ProjectDetailQuery($slug: String!) {
+  query AcativityQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

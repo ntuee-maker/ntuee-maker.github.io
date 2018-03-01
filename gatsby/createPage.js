@@ -1,25 +1,16 @@
-/* eslint-disable no-multi-assign */
 const { resolve } = require('path');
 
+// eslint-disable-next-line no-multi-assign
 module.exports = exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const projectTemplate = resolve('src/templates/project-detail.js');
+  const projectTemplate = resolve('src/templates/project.js');
+  const acativityTemplate = resolve('src/templates/acativity.js');
 
   const allMarkdown = await graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
+    allMarkdownRemark(limit: 1000) {
       edges {
         node {
-          excerpt(pruneLength: 250)
-          html
-          id
-          frontmatter {
-            date
-            title
-          }
           fields {
             slug
           }
@@ -40,12 +31,14 @@ module.exports = exports.createPages = async ({ boundActionCreators, graphql }) 
 
     if (slug.includes('projects/')) {
       template = projectTemplate;
+    } else if (slug.includes('acativities/')) {
+      template = acativityTemplate;
     }
 
     createPage({
-      path: node.fields.slug,
+      path: slug,
       component: template,
-      context: { slug: node.fields.slug },
+      context: { slug },
     });
   });
 };

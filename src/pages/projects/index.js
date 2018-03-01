@@ -25,12 +25,18 @@ type Props = {
   }
 };
 
+const filter = ({ edges }) => (
+  edges.filter(({ node }) => (
+    new RegExp('^/projects/*').test(node.fields.slug)
+  ))
+);
+
 const Projects = ({ data }: Props) => (
   <div className={styles.wrapper}>
     {
-      data.allMarkdownRemark.edges.map(({ node }) => (
+      filter(data.allMarkdownRemark).map(({ node }) => (
         <div className={styles.project} key={node.id}>
-          <Link to={node.fields.slug}>{ node.frontmatter.title }</Link>
+          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
         </div>
       ))
     }
@@ -41,15 +47,17 @@ export default Projects;
 
 // $FlowIgnore
 export const query = graphql`
-  query ProjectQuery {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+  query ProjectsQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       totalCount
       edges {
         node {
           id
           frontmatter {
             title
-            date(formatString: "DD MM, YYYY")
+            date(formatString: "DD MMMM, YYYY")
           }
           fields {
             slug

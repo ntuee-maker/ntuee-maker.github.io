@@ -7,10 +7,9 @@ import styles from './Navbar.module.scss';
 
 const Navbar = ({ pathname }: { pathname: string }) => {
   const links = [
-    { id: '', to: '/' },
-    { id: 'About', to: '/' },
+    { id: 'About', to: '/about' },
     { id: 'Project', to: '/projects' },
-    { id: 'Acativity', to: '/acativitys' },
+    { id: 'Acativity', to: '/acativities' },
   ];
 
   let bar: ?HTMLInputElement;
@@ -31,7 +30,7 @@ const Navbar = ({ pathname }: { pathname: string }) => {
         {
           links.map(link => (
             <Link
-              className={`${styles.link} ${withPrefix(link.to) === pathname ? styles.active : ''}`}
+              className={`${styles.link} ${pathname.includes(withPrefix(link.to)) ? styles.active : ''}`}
               onClick={() => { if (bar) { bar.checked = false; } }}
               key={link.id}
               {...link}

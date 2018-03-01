@@ -1,6 +1,6 @@
-/* eslint-disable no-multi-assign */
 const { createFilePath } = require('gatsby-source-filesystem');
 
+// eslint-disable-next-line no-multi-assign
 module.exports = exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
 
