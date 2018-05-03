@@ -9,7 +9,7 @@ node_modules
 
 # App packaged
 .cache
-build
+public
 
 # Compiled binary addons
 .eslintcache

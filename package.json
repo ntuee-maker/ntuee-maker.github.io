@@ -9,7 +9,7 @@
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
     "lint:js": "eslint . && flow check .",
     "clean": "bash ./clean.sh",
-    "deploy": "gatsby build && gh-pages -b master -d public -m '☄️ Deploy'"
+    "deploy": "yarn build && gh-pages -b master -d public -m '☄️ Deploy'"
   },
   "dependencies": {
     "autoprefixer": "^8.4.1",
@@ -33,6 +33,7 @@
     "eslint-plugin-react": "^7.6.0",
     "flow-bin": "^0.64.0",
     "flow-typed": "^2.2.3",
+    "gh-pages": "^1.1.0",
     "rimraf": "^2.6.2"
   }
 }
