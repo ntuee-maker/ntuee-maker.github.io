@@ -1,0 +1,2 @@
+webpackJsonp([44713349584700],{330:function(t,e){t.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{id:"/Users/han0110/playground/repo/ntuee-maker.github.io/content/events/test.md absPath of file >>> MarkdownRemark",frontmatter:{title:"test",date:"28 February, 2018"},fields:{slug:"/events/test/"}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---events-3cdb387eb532b9c47a13.js.map

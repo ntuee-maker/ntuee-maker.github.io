@@ -1,2 +1,0 @@
-webpackJsonp([35783957827783],{185:function(e,a,r){"use strict";function t(e){return e&&e.__esModule?e:{default:e}}a.__esModule=!0;var u=r(4),l=t(u),n=r(271),s=t(n),p=function(){return l.default.createElement("div",{className:s.default.wrapper},"NTUEE makerspace website",l.default.createElement("span",{role:"img","aria-label":"fire"}," 🔥🔥🔥"))};a.default=p,e.exports=a.default},271:function(e,a){e.exports={wrapper:"src-pages----index-module---wrapper---uS2vK"}}});
-//# sourceMappingURL=component---src-pages-index-js-d206b0fe0d837c7d3d4b.js.map
