@@ -1,6 +1,24 @@
-.cache
-.DS_Store
+# Dependency directory
 node_modules
-public
-flow-typed
+
+# Environment
+.env
+
+# OSX
+.DS_Store
+
+# App packaged
+build
+
+# Compiled binary addons
+.eslintcache
+
+# flow-typed
+flow-typed/npm/*
+!flow-typed/npm/module_vx.x.x.js
+
+# vscode
+.vscode
+
+# yarn
 yarn-error.log
