@@ -1,2 +1,0 @@
-webpackJsonp([0xbdedd6a30f6e],{333:function(t,e){t.exports={data:{project:{html:"",frontmatter:{title:"Knock-Knock",date:"12 20, 2017"}},authors:{edges:[{node:{frontmatter:{name:"Test044",id:"b05901044"}}}]}},pathContext:{authors:"/(b05901044)/",slug:"/projects/knock-knock/"}}}});
-//# sourceMappingURL=path---projects-knock-knock-c6f8e84b3ae437f97eb0.js.map
