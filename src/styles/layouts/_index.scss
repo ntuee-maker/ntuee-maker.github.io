@@ -1,0 +1,22 @@
+.layout__wrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: 'Quicksand-Regular';
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-rows: 60px 1fr fit-content(200px);
+  grid-template-areas:
+    "navbar"
+    "children"
+    "footer";
+}
+
+.layout__children {
+  grid-area: children;
+  width: 100vw;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}

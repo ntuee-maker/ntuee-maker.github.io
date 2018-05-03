@@ -5,12 +5,15 @@ module.exports = exports.createPages = async ({ boundActionCreators, graphql }) 
   const { createPage } = boundActionCreators;
 
   const projectTemplate = resolve('src/templates/project.js');
-  const acativityTemplate = resolve('src/templates/acativity.js');
+  const eventTemplate = resolve('src/templates/event.js');
 
   const allMarkdown = await graphql(`{
     allMarkdownRemark(limit: 1000) {
       edges {
         node {
+          frontmatter {
+            authors
+          }
           fields {
             slug
           }
@@ -26,19 +29,26 @@ module.exports = exports.createPages = async ({ boundActionCreators, graphql }) 
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug } = node.fields;
-    let template;
+    const { slug: path } = node.fields;
+    let component;
+    let context;
 
-    if (slug.includes('projects/')) {
-      template = projectTemplate;
-    } else if (slug.includes('acativities/')) {
-      template = acativityTemplate;
+    if (path.includes('/projects/')) {
+      component = projectTemplate;
+      context = { authors: `/(${node.frontmatter.authors.join('|')})/` };
+    } else if (path.includes('/events/')) {
+      component = eventTemplate;
+      context = {};
+    } else {
+      return;
     }
 
+    Object.assign(context, { slug: path });
+
     createPage({
-      path: slug,
-      component: template,
-      context: { slug },
+      path,
+      component,
+      context,
     });
   });
 };

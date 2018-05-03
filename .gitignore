@@ -8,6 +8,7 @@ node_modules
 .DS_Store
 
 # App packaged
+.cache
 build
 
 # Compiled binary addons

@@ -2,21 +2,19 @@
 
 import React from 'react';
 import Icon from './Icon';
-import ghIcon from '../../asset/img/ghIcon.svg';
-import fbIcon from '../../asset/img/fbIcon.svg';
-
-import styles from './Footer.module.scss';
+import ghIcon from '../assets/images/ghIcon.svg';
+import fbIcon from '../assets/images/fbIcon.svg';
 
 const Footer = () => (
-  <div className={styles.wrapper}>
-    <div className={styles.title}>
+  <div className="footer__wrapper">
+    <div className="footer__title">
       NTUEE saad
     </div>
-    <div className={styles.link}>
+    <div className="footer__link">
       <Icon href="https://github.com/ntuee-maker" src={ghIcon} alt="github" />
       <Icon href="https://www.facebook.com/makentu.ntuee" src={fbIcon} alt="facebook" />
     </div>
-    <div className={styles.contact}>
+    <div className="footer__contact">
       EEI 205
     </div>
   </div>

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import styles from './index.module.scss';
-
 const About = () => (
-  <div className={styles.wrapper}>
-    NTUEE makerspace website
+  <div className="home__wrapper">
+    <h4>NTUEE makerspace website</h4>
   </div>
 );
 

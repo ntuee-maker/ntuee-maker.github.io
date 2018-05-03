@@ -3,38 +3,30 @@
 import React from 'react';
 import Link, { withPrefix } from 'gatsby-link';
 
-import styles from './Navbar.module.scss';
+type Props = {
+  pathname: string,
+};
 
-const Navbar = ({ pathname }: { pathname: string }) => {
+const Navbar = ({ pathname }: Props) => {
   const links = [
     { id: 'About', to: '/about' },
-    { id: 'Project', to: '/projects' },
-    { id: 'Acativity', to: '/acativities' },
+    { id: 'Projects', to: '/projects' },
+    { id: 'Events', to: '/events' },
   ];
 
-  let bar: ?HTMLInputElement;
-
-  const Hamburger = () => (
-    <label htmlFor="hamburger">
-      <div className={`${styles.ham}`} />
-      <div className={`${styles.ham}`} />
-      <div className={`${styles.ham}`} />
-    </label>
-  );
-
   return (
-    <div className={styles.wrapper}>
-      <input type="checkbox" id="hamburger" ref={(input) => { bar = input; }} />
-      <Hamburger />
-      <div className={styles.links}>
+    <div className="navbar__wrapper">
+      <div className="navbar__links">
         {
-          links.map(link => (
+          links.map(({ id, to }) => (
             <Link
-              className={`${styles.link} ${pathname.includes(withPrefix(link.to)) ? styles.active : ''}`}
-              onClick={() => { if (bar) { bar.checked = false; } }}
-              key={link.id}
-              {...link}
-            />
+              className="navbar__link"
+              data-active={pathname.includes(withPrefix(to))}
+              key={id}
+              to={to}
+            >
+              {id}
+            </Link>
           ))
         }
       </div>

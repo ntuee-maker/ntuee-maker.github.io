@@ -9,6 +9,7 @@
 [libs]
 
 [options]
-module.name_mapper.extension='css' -> '<PROJECT_ROOT>/internals/flow/CSSModule.js.flow'
-module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/internals/flow/CSSModule.js.flow'
+module.file_ext=.scss
+module.name_mapper.extension='ico' -> '<PROJECT_ROOT>/internals/flow/WebpackAsset.js.flow'
+module.name_mapper.extension='svg' -> '<PROJECT_ROOT>/internals/flow/WebpackAsset.js.flow'
 suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore

@@ -8,8 +8,10 @@ type Props = {
   alt: string,
 };
 
-const Icon = ({ href, src, alt }: Props) => ( // eslint-disable-line object-curly-newline
-  <a rel="noopener noreferrer" target="_blank" href={href} style={{ display: 'flex', justifyContent: 'center', margin: '0 5px' }}>
+const style = { display: 'flex', justifyContent: 'center', margin: '0 5px' };
+
+const Icon = ({ href, src, alt }: Props) => (
+  <a rel="noopener noreferrer" target="_blank" href={href} style={style}>
     <img
       src={src}
       alt={alt}

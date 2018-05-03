@@ -1,13 +1,11 @@
 // @flow
 
-import React, { Node, Component } from 'react';
-import Helmet from 'react-helmet';
+import React, { Component } from 'react';
+import type { Node } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import helmet from '../helmet.json';
-import './index.scss';
-import styles from './index.module.scss';
+import '../styles/style.scss';
 
 type Props = {
   children: void => Node,
@@ -28,10 +26,9 @@ class Layout extends Component<Props, State> {
     const { children, location } = this.props;
 
     return (
-      <div className={styles.wrapper}>
-        <Helmet {...helmet} />
+      <div className="layout__wrapper">
         <Navbar pathname={location.pathname} />
-        <div className={styles.children}>{children()}</div>
+        <div className="layout__children">{children()}</div>
         <Footer />
       </div>
     );
