@@ -45,7 +45,7 @@ const Project = ({ data: { project, authors } }: Props) => {
           {
             authors.edges.map(({ node: { frontmatter: { name, id } } }) => (
               <div className="project__author" key={id}>
-                <img alt={`${name}`} />
+                <img alt="" title={name} />
                 <Link to={`/${id}`}>{name}</Link>
               </div>
             ))

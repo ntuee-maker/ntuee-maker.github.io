@@ -39,6 +39,7 @@ export default (props: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="NTUEE makerspace's website" />
         <link rel="shortcut icon" href={favicon} />
+        <title>NTUEE makerspace</title>
         {props.headComponents}
         {css}
       </head>

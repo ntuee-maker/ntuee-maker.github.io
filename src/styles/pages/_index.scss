@@ -1,12 +1,4 @@
 @import 'home';
 @import 'about';
 @import 'projects';
-
-@media screen and (min-width: 320px) {
-  @include projects_320;
-}
-@media screen and (min-width: 728px) {
-  @include projects_728;
-}
-@media screen and (min-width: 960px) {}
-@media screen and (min-width: 1280px) {}
+@import 'events';

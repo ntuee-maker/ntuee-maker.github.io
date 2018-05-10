@@ -4,7 +4,7 @@ import React from 'react';
 
 const About = () => (
   <div className="about__wrapper">
-    <h4>We are</h4>
+    <h4>We are EE makers</h4>
   </div>
 );
 

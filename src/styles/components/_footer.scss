@@ -1,24 +1,25 @@
-.footer__wrapper {
-  grid-area: footer;
-  width: 100%;
-  padding: 15px;
-  border-top: solid 1px #d8d8d8;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  > div {
+.footer {
+  &__wrapper {
+    grid-area: footer;
+    width: 100%;
+    padding: 15px;
+    border-top: solid 1px #d8d8d8;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    > * {
+      flex: 0 0 auto;
+      min-width: 200px;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    margin: 15px 0 22px 0;
+    display: flex;
     justify-content: center;
   }
 }
 
-.footer__title, .footer__contact {
-  font-size: 1.2rem;
-  flex-direction: column;
-}
-
-.footer__link {
-  flex-direction: row;
-}

@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Link from 'gatsby-link';
+import ProjectCard from '../components/projects/ProjectCard';
 
 type Props = {
   data: {
@@ -26,10 +26,12 @@ type Props = {
 const Projects = ({ data }: Props) => (
   <div className="projects__wrapper">
     {
-      data.allMarkdownRemark.edges.map(({ node }) => (
-        <div className="projects__project" key={node.id}>
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-        </div>
+      data.allMarkdownRemark.edges.map(({ node: { id, frontmatter, fields } }) => (
+        <ProjectCard
+          frontmatter={frontmatter}
+          fields={fields}
+          key={id}
+        />
       ))
     }
   </div>

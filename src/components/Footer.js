@@ -7,16 +7,16 @@ import fbIcon from '../assets/images/fbIcon.svg';
 
 const Footer = () => (
   <div className="footer__wrapper">
-    <div className="footer__title">
+    <h4>
       NTUEE saad
-    </div>
+    </h4>
     <div className="footer__link">
       <Icon href="https://github.com/ntuee-maker" src={ghIcon} alt="github" />
       <Icon href="https://www.facebook.com/makentu.ntuee" src={fbIcon} alt="facebook" />
     </div>
-    <div className="footer__contact">
+    <h4>
       EEI 205
-    </div>
+    </h4>
   </div>
 );
 

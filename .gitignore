@@ -1,9 +1,6 @@
 # Dependency directory
 node_modules
 
-# Environment
-.env
-
 # OSX
 .DS_Store
 
