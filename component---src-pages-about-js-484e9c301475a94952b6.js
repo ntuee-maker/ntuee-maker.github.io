@@ -1,0 +1,2 @@
+webpackJsonp([0xefeaa6d1881d],{205:function(e,t,a){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var r=a(2),l=u(r),n=function(){return l.default.createElement("div",{className:"about__wrapper"},l.default.createElement("h4",null,"We are EE makers"))};t.default=n,e.exports=t.default}});
+//# sourceMappingURL=component---src-pages-about-js-484e9c301475a94952b6.js.map

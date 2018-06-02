@@ -1,0 +1,2 @@
+webpackJsonp([0xc5772f8f98ce],{333:function(t,o){t.exports={data:{markdownRemark:{html:"<p>This is a workshop</p>",frontmatter:{title:"Workshop",date:"02 28, 2018"}}},pathContext:{slug:"/events/workshop/"}}}});
+//# sourceMappingURL=path---events-workshop-f9bdc5c86d3fcb02f244.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([76485822807768],{332:function(e,t){e.exports={data:{project:{html:'<h2>Main</h2>\n<p>Here is the article</p>\n<p>Here is a link: <a href="/">home page</a></p>\n<p><img src="" alt="Here is a image"></p>',frontmatter:{title:"Barista",date:"05 03, 2018"}},authors:{edges:[{node:{frontmatter:{name:"Test000",id:"b05901000"}}},{node:{frontmatter:{name:"Test044",id:"b05901044"}}}]}},pathContext:{authors:"/(b05901044|b05901000)/",slug:"/projects/barista/"}}}});
-//# sourceMappingURL=path---projects-barista-fa7d6adb114e0701d1ad.js.map
