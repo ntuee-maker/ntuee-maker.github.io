@@ -29,5 +29,7 @@ module.exports = {
         postCssPlugins: [autoprefixer()],
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
   ],
 };

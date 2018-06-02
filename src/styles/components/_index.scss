@@ -1,6 +1,7 @@
 @import "navbar";
 @import "footer";
 @import "project_card";
+@import "slider";
 
 @mixin components_320 {
   @include projects_card_320;

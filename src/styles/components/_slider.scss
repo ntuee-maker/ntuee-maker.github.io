@@ -1,0 +1,89 @@
+.slider {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__window {
+    width: 100%;
+    align-self: center;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      padding-top: 56.25%;
+      display: block;
+    }
+  }
+
+  &__children {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: margin-left 0.7s ease-in-out;
+
+    > * {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      margin-right: 50px;
+
+      > div {
+        height: 100%;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    top: calc(50% - 30px);
+    z-index: 2;
+    cursor: pointer;
+    background-color: rgba(#000, 0);
+
+    &:nth-child(1) {
+      left: 10px;
+    }
+
+    &:nth-child(2) {
+      right: 10px;
+      transform: rotate(180deg);
+    }
+
+    > svg {
+      fill: #303030;
+    }
+  }
+
+  &__dots {
+    height: 10px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > button {
+      width: 6px;
+      height: 6px;
+      margin: 0px 10px;
+      background-color: #303030;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &[data-active=true] {
+        width: 8px;
+        height: 8px;
+        margin: 0px 9px;
+      }
+    }
+  }
+}
