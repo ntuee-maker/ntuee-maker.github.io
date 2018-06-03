@@ -10,7 +10,8 @@ type Props = {
 };
 
 type State = {
-  curr: number
+  curr: number,
+  startX: number,
 };
 
 class Slider extends Component<Props, State> {
@@ -18,13 +19,36 @@ class Slider extends Component<Props, State> {
     super();
     this.state = {
       curr: 0,
+      startX: 0,
     };
   }
 
-  slide = (dest: number) => { this.setState({ curr: dest }); }
+  onTouchStart = (e: TouchEvent) => {
+    this.setState({ startX: e.touches[0].pageX });
+  }
+
+  onTouchMove = (e: TouchEvent) => {
+    const { curr, startX } = this.state;
+    const delta = (e.touches[0].pageX - startX) / window.innerWidth;
+    this.setState({ curr: curr - delta, startX: e.touches[0].pageX });
+  }
+
+  onTouchEnd = () => {
+    this.slide(Math.round(this.state.curr));
+  }
+
+  slide = (dest: number) => {
+    if (dest < 0) {
+      this.setState({ curr: 0 });
+    } else if (dest >= this.props.children.length) {
+      this.setState({ curr: this.props.children.length - 1 });
+    } else {
+      this.setState({ curr: dest });
+    }
+  }
 
   render() {
-    const { slide } = this;
+    const { slide, onTouchStart, onTouchMove, onTouchEnd } = this;
     const { children } = this.props;
     const { curr } = this.state;
 
@@ -32,10 +56,16 @@ class Slider extends Component<Props, State> {
 
     return (
       <div className="slider__wrapper">
-        <button className="slider__arrow" onClick={() => { if (curr - 1 >= 0) slide((curr - 1)); }}><Arrow /></button>
-        <button className="slider__arrow" onClick={() => { if (curr + 1 < children.length) slide((curr + 1)); }}><Arrow /></button>
+        <button className="slider__arrow" onClick={() => slide((curr - 1))}><Arrow /></button>
+        <button className="slider__arrow" onClick={() => slide((curr + 1))}><Arrow /></button>
         <div className="slider__window">
-          <div className="slider__children" style={{ marginLeft: `calc(${-100 * curr}% - ${50 * curr}px)` }}>
+          <div
+            className="slider__children"
+            style={{ transform: `translateX(calc(${-100 * curr}% - ${50 * curr}px))`, transitionDuration: curr % 1 === 0 ? '0.5s' : '0s' }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {children}
           </div>
         </div>

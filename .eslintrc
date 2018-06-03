@@ -21,6 +21,7 @@
     "react"
   ],
   "rules": {
+    "object-curly-newline": ["error", { "minProperties": 5, "consistent": true }],
     "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": "off",
     "jsx-a11y/anchor-is-valid": ["error", {

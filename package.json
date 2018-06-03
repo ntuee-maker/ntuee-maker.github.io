@@ -5,7 +5,7 @@
   "author": "Jason Jian",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "yarn clean && gatsby develop",
+    "dev": "yarn clean && gatsby develop --host 0.0.0.0 --port 8000",
     "build": "yarn clean && gatsby build",
     "serve": "gatsby serve",
     "lint:js": "eslint . && flow check .",
