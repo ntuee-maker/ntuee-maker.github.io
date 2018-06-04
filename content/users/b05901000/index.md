@@ -1,4 +1,5 @@
 ---
-name: "Test000"
-id: "b05901000"
+id: "Your student id"
+name: "Your name"
+github: ""
 ---

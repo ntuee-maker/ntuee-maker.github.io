@@ -10,9 +10,10 @@
     "serve": "gatsby serve",
     "lint:js": "eslint . && flow check .",
     "lint:md": "remark -q .",
-    "clean": "bash ./clean.sh",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
-    "deploy": "npm run build && gh-pages -b master -d public -m '☄️ Deploy'"
+    "deploy": "npm run build && gh-pages -b master -d public -m '☄️ Deploy'",
+    "clean": "node ./script/clean",
+    "create-user": "node ./script/createUser"
   },
   "dependencies": {
     "autoprefixer": "^8.4.1",
@@ -41,6 +42,8 @@
     "remark-cli": "^5.0.0",
     "remark-frontmatter": "^1.2.0",
     "remark-preset-lint-recommended": "^3.0.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.8.2",
+    "yargs": "^11.0.0"
   }
 }
