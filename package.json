@@ -5,14 +5,14 @@
   "author": "Jason Jian",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "yarn clean && gatsby develop --host 0.0.0.0 --port 8000",
-    "build": "yarn clean && gatsby build",
+    "dev": "npm run clean && gatsby develop --host 0.0.0.0 --port 8000",
+    "build": "npm run clean && gatsby build",
     "serve": "gatsby serve",
     "lint:js": "eslint . && flow check .",
     "lint:md": "remark -q .",
     "clean": "bash ./clean.sh",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
-    "deploy": "yarn build && gh-pages -b master -d public -m '☄️ Deploy'"
+    "deploy": "npm run build && gh-pages -b master -d public -m '☄️ Deploy'"
   },
   "dependencies": {
     "autoprefixer": "^8.4.1",
