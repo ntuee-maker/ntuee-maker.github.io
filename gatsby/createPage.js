@@ -6,6 +6,7 @@ module.exports = exports.createPages = async ({ boundActionCreators, graphql }) 
 
   const projectTemplate = resolve('src/templates/project.js');
   const eventTemplate = resolve('src/templates/event.js');
+  const peopleTemplate = resolve('src/templates/people.js');
 
   const allMarkdown = await graphql(`{
     allMarkdownRemark(limit: 1000) {
@@ -38,6 +39,9 @@ module.exports = exports.createPages = async ({ boundActionCreators, graphql }) 
       context = { authors: `/(${node.frontmatter.authors.join('|')})/` };
     } else if (path.includes('/events/')) {
       component = eventTemplate;
+      context = {};
+    } else if (path.includes('/people/')) {
+      component = peopleTemplate;
       context = {};
     } else {
       return;

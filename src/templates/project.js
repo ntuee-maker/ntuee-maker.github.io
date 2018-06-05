@@ -56,7 +56,7 @@ const Project = ({ data }: Props) => {
   if (data.authorsImage) {
     for (let i = 0, l = data.authorsImage.edges.length; i < l; i += 1) {
       const { node } = data.authorsImage.edges[i];
-      authorsImage[node.id.substr(node.id.indexOf('user')).split('/')[1]] = node.sizes;
+      authorsImage[node.id.substr(node.id.indexOf('people')).split('/')[1]] = node.sizes;
     }
   }
   if (data.authors) {
@@ -80,11 +80,13 @@ const Project = ({ data }: Props) => {
           </div>
         ) : <div />
       }
-      <div
-        className="project__section"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className="project__section">
+        <div
+          className="project__md"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
       <div className="project__section">
         <h2>Authors</h2>
         <div className="project__authors">
@@ -92,7 +94,7 @@ const Project = ({ data }: Props) => {
             authors.map(({ name, id, sizes }) => (
               <div className="project__author" key={id}>
                 <Img sizes={sizes} outerWrapperClassName="project__author__img" />
-                <Link to={`/${id}`}>{name}</Link>
+                <Link to={`/people/${id}`}>{name}</Link>
               </div>
             ))
           }

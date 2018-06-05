@@ -1,7 +1,7 @@
 .project {
   &__wrapper {
     width: 100%;
-    max-width: 860px;
+    max-width: 640px;
   }
 
   &__section {
@@ -11,10 +11,21 @@
     word-wrap: break-word;
   }
 
+  &__md {
+    display: flex;
+    flex-direction: column;
+
+    .gatsby-resp-iframe-wrapper {
+      margin: 20px 0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  }
+
   &__authors {
     margin: 15px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-gap: 20px;
   }
 

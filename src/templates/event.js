@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Template = ({ data }: { data: Object }) => {
+const Event = ({ data }: { data: Object }) => {
   const { markdownRemark: post } = data;
   return (
     <div>
@@ -15,7 +15,7 @@ const Template = ({ data }: { data: Object }) => {
   );
 };
 
-export default Template;
+export default Event;
 
 // $FlowIgnore
 export const query = graphql`
