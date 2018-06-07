@@ -1,25 +1,26 @@
-const { argv } = require('yargs');
 const shell = require('shelljs');
+const { argv } = require('yargs');
+const { error, done } = require('./log');
 
 const { id, name, studentId } = argv;
 
 if (id === undefined) {
-  shell.echo('Error: Please specify your id');
+  error('please specify your id');
   shell.exit(1);
 }
 
 if (shell.test('-e', `./content/people/${id}`) === true) {
-  shell.echo('Error: User already exists');
+  error('user already exists');
   shell.exit(1);
 }
 
 if (name === undefined) {
-  shell.echo('Error: Please specify your name');
+  error('please specify your name');
   shell.exit(1);
 }
 
 if (studentId === undefined) {
-  shell.echo('Error: Please specify your studentId');
+  error('please specify your studentId');
   shell.exit(1);
 }
 
@@ -31,8 +32,8 @@ studentId: "${studentId || ''}"
 ---\
 `;
 
-
 shell.mkdir(`./content/people/${id}`);
 shell.echo(md).to(`./content/people/${id}/index.md`);
+done('Creating people successfully');
 shell.exit(0);
 

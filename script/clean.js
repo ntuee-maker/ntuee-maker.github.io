@@ -1,24 +1,22 @@
 const shell = require('shelljs');
+const { success, done } = require('./log');
 
 const cleanPublic = () => {
-  if (shell.test('-e', './public') === false) {
-    shell.echo('Directory public doesn\'t exit, create one...');
-    shell.mkdir('./public');
-  } else {
-    shell.echo('Cleaning public...');
+  if (shell.test('-e', './public') === true) {
     shell.rm('-rf', './public/*');
+    success('cleaning public');
   }
 };
 
 const cleanCache = () => {
   if (shell.test('-e', './.cache') === true) {
-    shell.echo('Cleaning cache...');
-    shell.rm('-rf', './.cache');
+    shell.rm('-rf', './.cache/*');
+    success('cleaning cache');
   }
 };
 
 cleanPublic();
 cleanCache();
 
-shell.echo('Finish Cleaning!');
+done('Finish cleaning!\n');
 shell.exit(0);
